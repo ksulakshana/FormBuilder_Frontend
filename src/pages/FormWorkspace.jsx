@@ -150,7 +150,11 @@ function FormWorkspace() {
           )}
         </div>
         <div className={styles.fileMiddleSection}>
-          <Link to="/">Flow</Link>
+          {formParams && formParams.formId == "new" ? (
+            <Link to="/createform/new">Flow</Link>
+          ) : (
+            <Link to={`/createform/${formParams.formId}`}>Flow</Link>
+          )}
           {formParams && formParams.formId == "new" ? (
             <Link to="/analytics/new">Response</Link>
           ) : (

@@ -62,8 +62,18 @@ function Analytics() {
     <div className={styles.analyticsContainer}>
       <div className={styles.analyticsTopSection}>
         <div className={styles.fileMiddleSection}>
-          <Link to="/createForm/new">Flow</Link>
-          <Link to="#">Response</Link>
+          {/* <Link to="/createForm/new">Flow</Link>
+          <Link to="#">Response</Link> */}
+          {formParams && formParams.formId == "new" ? (
+            <Link to="/createform/new">Flow</Link>
+          ) : (
+            <Link to={`/createform/${formParams.formId}`}>Flow</Link>
+          )}
+          {formParams && formParams.formId == "new" ? (
+            <Link to="/analytics/new">Response</Link>
+          ) : (
+            <Link to={`/analytics/${formParams.formId}`}>Response</Link>
+          )}
         </div>
         <div className={styles.fileRightSection}>
           <div className={styles.toggleDiv}>
