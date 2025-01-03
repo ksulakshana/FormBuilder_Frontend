@@ -130,7 +130,7 @@ function FormDashboard() {
       .catch((e) => {
         console.log(e);
       });
-  }, [setWSData]);
+  }, [wsData]);
 
   const getFiles = () => {
     getAllForms()
@@ -153,12 +153,14 @@ function FormDashboard() {
         >
           {wsData &&
             wsData.map((item, i) => (
-              <option key={i} value={item._id}>
-                {item.name} Workspace
-              </option>
+              <>
+                <option key={i} value={item._id}>
+                  {item.name} Workspace
+                </option>
+                <option value="settings">Settings</option>
+                <option value="logout">Logout</option>
+              </>
             ))}
-          <option value="settings">Settings</option>
-          <option value="logout">Logout</option>
         </select>
         <div className={styles.toggleDiv}>
           <span>Light</span>
