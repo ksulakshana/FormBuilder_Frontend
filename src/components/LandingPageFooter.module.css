@@ -15,7 +15,7 @@
 }
 .footerCol1 p {
   margin: 0;
-  font-family: Open Sans;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -25,7 +25,7 @@
 }
 
 .footerCol1 p span {
-  font-family: Open Sans;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -37,7 +37,7 @@
 }
 
 .footerHeadings {
-  font-family: Outfit;
+  font-family: "Outfit", sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 21.6px;
@@ -55,7 +55,7 @@
 }
 
 .footerList a {
-  font-family: Open Sans;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -70,7 +70,7 @@
 .footerCol2 p,
 .footerCol3 p,
 .footerCol4 p {
-  font-family: Outfit;
+  font-family: "Outfit", sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 21.6px;

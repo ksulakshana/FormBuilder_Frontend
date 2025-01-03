@@ -57,7 +57,7 @@
 }
 
 .landingHeading1 {
-  font-family: Outfit;
+  font-family: "Outfit", sans-serif;
   font-size: 72px;
   font-weight: 700;
   line-height: 86.4px;
@@ -71,7 +71,7 @@
 }
 
 .landingHeading2 {
-  font-family: Open Sans;
+  font-family: "Open Sans", sans-serif;
   font-size: 20px;
   font-weight: 400;
   line-height: 30px;
@@ -87,7 +87,7 @@
   border-radius: 0.5rem;
   box-shadow: 0px 1px 0px 0px #ffffff33 inset;
   background: #1a5fff;
-  font-family: Open Sans;
+  font-family: "Open Sans", sans-serif;
   font-size: 18px;
   font-weight: 600;
   line-height: 21.6px;

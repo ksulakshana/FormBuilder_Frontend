@@ -43,7 +43,7 @@
   right: 3rem;
 }
 .editorviewPanel span {
-  font-family: Open Sans;
+  font-family: "Open Sans", sans-serif;
   font-size: 27.33px;
   font-weight: 600;
   line-height: 41px;
@@ -59,7 +59,7 @@
   border: transparent;
   border-radius: 1rem;
   background: #1f1f23;
-  font-family: Open Sans;
+  font-family: "Open Sans", sans-serif;
   font-size: 20px;
   font-weight: 600;
   line-height: 41px;
@@ -71,7 +71,7 @@
 }
 
 .copyLinkSpan {
-  font-family: Open Sans;
+  font-family: "Open Sans", sans-serif;
   font-size: 27.33px;
   font-weight: 600;
   line-height: 41px;

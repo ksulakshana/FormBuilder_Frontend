@@ -21,7 +21,7 @@
 }
 
 .deleteHeading {
-  font-family: Open Sans;
+  font-family: "Open Sans", sans-serif;
   font-size: 27.33px;
   font-weight: 600;
   line-height: 41px;
@@ -41,7 +41,7 @@
 
 .deleteConfirmLink,
 .deleteCancelLink {
-  font-family: Open Sans;
+  font-family: "Open Sans", sans-serif;
   font-size: 27.33px;
   font-weight: 600;
   line-height: 41px;

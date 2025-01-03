@@ -22,7 +22,7 @@
 
 .modalContainer p {
   margin: 0;
-  font-family: Open Sans;
+  font-family: "Open Sans", sans-serif;
   font-size: 27.33px;
   font-weight: 600;
   line-height: 41px;
@@ -38,7 +38,7 @@
   border-radius: 1rem;
   width: 80%;
   height: 3rem;
-  font-family: Open Sans;
+  font-family: "Open Sans", sans-serif;
   font-size: 20px;
   font-weight: 600;
   line-height: 41px;
@@ -60,7 +60,7 @@
 
 .doneLink,
 .cancelLink {
-  font-family: Open Sans;
+  font-family: "Open Sans", sans-serif;
   font-size: 27.33px;
   font-weight: 600;
   line-height: 41px;

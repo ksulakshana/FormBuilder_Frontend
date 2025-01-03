@@ -43,7 +43,7 @@
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   border: 1px solid #7ea6ff;
-  font-family: Open Sans;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   font-weight: 600;
   line-height: 16.8px;
@@ -74,7 +74,7 @@
 }
 
 .toggleDiv span {
-  font-family: Open Sans;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   font-weight: 600;
   line-height: 16.8px;

@@ -29,7 +29,7 @@
 }
 
 .dashboardNavOptions {
-  font-family: Open Sans;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 19.2px;
@@ -57,7 +57,7 @@
 }
 
 .toggleDiv span {
-  font-family: Open Sans;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   font-weight: 600;
   line-height: 16.8px;
@@ -158,7 +158,7 @@
 }
 .createFolder span,
 .createdFolder a span {
-  font-family: Open Sans;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 19.2px;
@@ -189,7 +189,7 @@
 
 .createFile a,
 .createdFile a {
-  font-family: Open Sans;
+  font-family: "Open Sans", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 21.6px;

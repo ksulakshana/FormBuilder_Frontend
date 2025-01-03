@@ -66,7 +66,7 @@
   background: #ffffff;
   border: transparent;
   box-shadow: 0px 4px 6.3px 0px #00000040;
-  font-family: Open Sans;
+  font-family: "Open Sans", sans-serif;
   font-size: 15px;
   font-weight: 600;
   line-height: 20.43px;
@@ -106,7 +106,7 @@ ul.selections li.selected {
 
 ul.selections li {
   text-decoration: none;
-  font-family: Open Sans;
+  font-family: "Open Sans", sans-serif;
   font-size: 15px;
   font-weight: 600;
   line-height: 20.43px;
