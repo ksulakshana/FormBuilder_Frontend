@@ -5,7 +5,7 @@ import LandingPageFooter from "../components/LandingPageFooter";
 import blue_arc from "../assets/blue_arc.png";
 import orange_arc from "../assets/orange_arc.png";
 import { Link } from "react-router-dom";
-import landingCenterimage from "../assets/landingCenterimage.png";
+import landingCenterimage from "../assets/landingCenterImage.png";
 function LandingPage() {
   return (
     <div className={styles.landingPageContainer}>
