@@ -100,29 +100,29 @@ function FormDashboard() {
         }
         setUser(res.data.userdata.name);
         getUserAllWorkspace()
-          .then((res) => {
-            if (!res.data) {
+          .then((res1) => {
+            if (!res1.data) {
               alert("No Dashboard!! Something is wrong.. Please register");
               navigate("/register");
             }
             console.log("wsdata");
-            console.log(res.data.workspaceData[0]._id);
-            setWSData(res.data.workspaceData);
+            console.log(res1.data.workspaceData[0]._id);
+            setWSData(res1.data.workspaceData);
             document.getElementById("wsSelect").selectedIndex = 0;
             var x = document.getElementById("wsSelect").selectedIndex;
             var y = document.getElementsByTagName("option");
-            setSelectedWS(res.data.workspaceData[0]._id);
+            setSelectedWS(res1.data.workspaceData[0]._id);
             localStorage.setItem(
               "WorkingWorkspaceId",
-              res.data.workspaceData[0]._id
+              res1.data.workspaceData[0]._id
             );
 
-            getAllFoldersForWorkspace(y[x].value)
-              .then((res) => {
-                if (!res.data) {
+            getAllFoldersForWorkspace(res1.data.workspaceData[0]._id)
+              .then((res2) => {
+                if (!res2.data) {
                   alert("No Folders Created");
                 }
-                setFolderData(res.data.folderData);
+                setFolderData(res2.data.folderData);
                 getFiles();
               })
               .catch((e) => {
