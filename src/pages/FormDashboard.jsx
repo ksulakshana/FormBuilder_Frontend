@@ -172,14 +172,10 @@ function FormDashboard() {
                 <option key={i} value={item._id}>
                   {item.name} Workspace
                 </option>
+                <option value="settings">Settings</option>
+                <option value="logout">Logout</option>
               </>
             ))}
-          {wsData && (
-            <>
-              <option value="settings">Settings</option>
-              <option value="logout">Logout</option>
-            </>
-          )}
         </select>
         <div className={styles.toggleDiv}>
           <span>Light</span>
