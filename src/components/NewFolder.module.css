@@ -1,0 +1,88 @@
+.newFolder {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: #ffffff80;
+  text-align: center;
+  position: relative;
+  display: grid;
+  border-radius: 2rem;
+  background: #18181b;
+  width: 20rem;
+  height: auto;
+  border: 1px solid #47474a;
+  box-shadow: 0px 0px 3.8px 0px #ffffff40;
+}
+
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.modalContainer p {
+  margin: 0;
+  font-family: Open Sans;
+  font-size: 27.33px;
+  font-weight: 600;
+  line-height: 41px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #ffffff;
+}
+
+.modalContainer input {
+  background: #1f1f23;
+  border: transparent;
+  border-radius: 1rem;
+  width: 80%;
+  height: 3rem;
+  font-family: Open Sans;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 41px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #a1a1a14f;
+  padding-left: 0.5rem;
+}
+
+.actionLinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  padding-left: 1rem;
+}
+
+.doneLink,
+.cancelLink {
+  font-family: Open Sans;
+  font-size: 27.33px;
+  font-weight: 600;
+  line-height: 41px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.doneLink {
+  color: #4b83ff;
+}
+
+.actionLinks span {
+  width: 50px;
+  height: 0px;
+  top: 192px;
+  left: 515px;
+  gap: 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+  rotate: -90deg;
+  border: 1px solid #47474a;
+}

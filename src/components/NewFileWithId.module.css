@@ -1,0 +1,166 @@
+.createFileLeftSection {
+  width: 20%;
+  height: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 3.5rem 1.5rem;
+  border-radius: 0.6rem;
+  border: var(--border-bottom);
+  background-color: var(--color-background);
+  box-shadow: var(--box-shadow);
+}
+
+.startIcon {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  width: 18rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: var(--border-bottom);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+.bubbleFields,
+.inputFields {
+  display: grid;
+  column-gap: 0.5rem;
+  row-gap: 0.5rem;
+  grid-template-columns: auto auto;
+}
+
+.bubbles span,
+.inputs span {
+  font-family: Open Sans;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: var(--color-foreground);
+}
+
+.bubbleFields a,
+.bubbleFields p,
+.inputFields a {
+  width: 4rem;
+  height: 50%;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  background: var(--color-background);
+  border: var(--border-bottom);
+  font-family: Open Sans;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: var(--color-foreground);
+
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10%;
+  margin: 0;
+}
+
+.createFileRightSection {
+  width: 80%;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.formElements {
+  background: var(--color-background);
+  width: 315px;
+  height: 119px;
+  border-radius: 0.5rem;
+  border: var(--border-bottom);
+}
+
+.bubbleDiv,
+.inputDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 0.5rem;
+  position: relative;
+  padding: 0.5rem;
+}
+.delete_icon {
+  position: absolute;
+  top: -14px;
+  right: -7px;
+}
+
+.bubbleHeading {
+  font-family: Open Sans;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 21px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: var(--color-foreground);
+}
+
+.bubbleDiv input {
+  width: 15rem;
+  padding: 1rem;
+  border-radius: 5px;
+  background: var(--color-background);
+  border: 1px solid #f55050;
+}
+
+.bubbleDiv a {
+  border: var(--border-bottom);
+}
+
+.requiredField {
+  font-family: Poppins;
+  font-size: 10.43px;
+  font-weight: 500;
+  line-height: 15.65px;
+  letter-spacing: 0.03em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #522224;
+}
+
+.addImageBubble {
+  width: 15rem;
+  padding: 1rem;
+  border-radius: 5px;
+  background: var(--color-background);
+  border: 1px solid transparent;
+  text-decoration: none;
+  font-family: Open Sans;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: var(--bubbleImage-textColor);
+}
+
+.inputDiv button {
+  width: 16rem;
+  padding: 1rem;
+  border-radius: 5px;
+  background: var(--color-background);
+}

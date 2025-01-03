@@ -1,0 +1,155 @@
+.workspaceContainer {
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: normal;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+.workspaceTopSection {
+  height: 100%;
+  width: 100%;
+  border-bottom: var(--border-bottom);
+  padding: 0.4rem 0;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.fileNameInput {
+  width: 30%;
+  padding-left: 1rem;
+}
+
+.fileMiddleSection {
+  width: 30%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+.fileMiddleSection a {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #7ea6ff;
+  font-family: Open Sans;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16.8px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #7ea6ff;
+}
+
+.fileRightSection {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  padding-right: 1rem;
+}
+
+.toggleDiv {
+  width: 10rem;
+  position: relative;
+  right: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggleDiv span {
+  font-family: Open Sans;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16.8px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: var(--color-foreground);
+}
+
+.shareLink {
+  position: relative;
+  left: 25%;
+}
+
+/*****************toggle switch start***********************/
+.toggle_switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.toggle_switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background: #b1b1b1;
+  border-radius: 24px;
+  width: 100%;
+  height: 100%;
+  transition: background-color 0.3s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.toggle_switch input:checked + .slider {
+  background: #1a5fff;
+}
+
+.toggle_switch input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+/*****************toggle switch end***********************/
+.shareBtn img,
+.saveFile img,
+.disabledCursor img {
+  width: 3.5rem;
+  height: 1.5rem;
+}
+
+.disabledCursor {
+  cursor: default;
+}
+
+.workspaceBottomSection {
+  width: 98%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1%;
+}

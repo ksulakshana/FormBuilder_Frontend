@@ -1,0 +1,42 @@
+.firstDataSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.viewsCount,
+.startsCount {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.5rem;
+  border-radius: 1rem;
+  background: var(--response-count-background);
+  padding: 1rem;
+  width: 5rem;
+  border: var(--border-bottom);
+}
+
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+table td {
+  padding: 0.5rem;
+  border: var(--reponse-table-td-border);
+}
+table th {
+  padding: 0.5rem;
+  border: var(--reponse-table-td-border);
+}
+
+.chartSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}

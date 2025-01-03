@@ -1,0 +1,37 @@
+.rightSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.signInBox {
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #7ea6ff;
+  font-family: Open Sans;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19.2px;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #7ea6ff;
+  text-decoration: none;
+}
+
+.createFormBox {
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  background: #1a5fff;
+  box-shadow: 0px 1px 0px 0px #ffffff33 inset;
+  font-family: Open Sans;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19.2px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #ffffff;
+  text-decoration: none;
+}

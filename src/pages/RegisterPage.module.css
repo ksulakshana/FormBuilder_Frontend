@@ -1,0 +1,49 @@
+.registerContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(0deg, #121212, #121212),
+    linear-gradient(0deg, #18181b, #18181b);
+  justify-content: space-between;
+  gap: 5rem;
+  overflow: auto;
+}
+
+.registerNav {
+  width: 80%;
+  position: relative;
+  left: 10%;
+  top: 6%;
+}
+
+.registerMidSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  bottom: 8%;
+}
+
+.registerFormDiv {
+  /* height: auto; */
+  height: 32rem;
+  width: auto;
+  position: relative;
+  right: 8rem;
+}
+
+.pink_ellipse {
+  position: relative;
+  bottom: 10rem;
+}
+
+.yellow_ellipse_div {
+  /* position: relative;
+  bottom: 6rem;
+  left: 60%; */
+  position: absolute;
+  bottom: 0;
+  left: 65%;
+}
