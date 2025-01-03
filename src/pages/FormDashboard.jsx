@@ -130,7 +130,7 @@ function FormDashboard() {
       .catch((e) => {
         console.log(e);
       });
-  }, [wsData]);
+  }, []);
 
   const getFiles = () => {
     getAllForms()
