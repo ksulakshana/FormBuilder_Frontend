@@ -277,7 +277,7 @@ function UserForm() {
                         id={value1.fieldCount}
                         name={value1.fieldCount}
                         className={styles.inputTextFromUser}
-                        onClick={submitForm}
+                        onClick={(e) => alert("clicked")}
                       >
                         Submit
                       </button>
@@ -287,6 +287,9 @@ function UserForm() {
               )}
             </>
           ))}
+        <button className={styles.inputTextFromUser} onClick={submitForm}>
+          Submit
+        </button>
       </form>
     </div>
   );
