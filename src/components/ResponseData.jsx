@@ -88,7 +88,13 @@ function ResponseData() {
             </table>
           </div>
           <div className={styles.chartSection}>
-            <ChartComponent />
+            {viewCount && (
+              <ChartComponent
+                viewCount={viewCount}
+                startCount={startCount}
+                submitCount={submitCount}
+              />
+            )}
           </div>
         </>
       )}

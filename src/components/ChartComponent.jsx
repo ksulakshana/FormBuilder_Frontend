@@ -1,20 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./ChartComponent.module.css";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-function ChartComponent() {
+function ChartComponent(viewCount, startCount, submitCount) {
+  const [vc, setVC] = useState(0);
+  const [sc, setSC] = useState(0);
   let data = [
     {
-      label: "Label 1",
-      value: 55,
+      label: "Start Count",
+      value: 50,
       color: "#3B82F6",
       cutout: "70%",
     },
     {
-      label: "Label 2",
+      label: "Submitted Count",
       value: 15,
       color: "#909090",
       cutout: "70%",
@@ -22,9 +24,6 @@ function ChartComponent() {
   ];
 
   const options = {
-    // plugins: {
-    //   responsive: true,
-    // },
     cutout: data.map((item) => item.cutout),
   };
 
@@ -40,15 +39,20 @@ function ChartComponent() {
       },
     ],
   };
+  useEffect(() => {
+    setSC(viewCount.startCount);
+    const percentage = (viewCount.submitCount / viewCount.startCount) * 100;
+    setVC(Math.round(percentage));
+  }, [sc]);
 
   return (
     <>
       <div className={styles.leftChart}>
-        <Doughnut data={finalData} options={options} />
+        {sc && <Doughnut data={finalData} options={options} />}
       </div>
       <div className={styles.rightChart}>
         <span>Completion rate</span>
-        <span>33%</span>
+        <span>{vc}%</span>
       </div>
     </>
   );
