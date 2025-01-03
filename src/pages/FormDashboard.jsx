@@ -18,12 +18,14 @@ import {
   getWorkspaceData,
   updateWorkspace,
 } from "../services/workspace";
+import DeleteFileConfirmation from "../components/DeleteFileConfirmation";
 
 function FormDashboard() {
   const [isToggled, setIsToggled] = useState(true);
   const [user, setUser] = useState();
   const [openModal, setOpenModal] = useState(false);
   const [deleteOpenModal, setDeleteOpenModal] = useState(false);
+  const [deleteFileOpenModal, setDeleteFileOpenModal] = useState(false);
   const [shareOpenModal, setshareOpenModal] = useState(false);
   const [wsData, setWSData] = useState([]);
   const navigate = useNavigate();
@@ -31,6 +33,7 @@ function FormDashboard() {
   const [selectedWS, setSelectedWS] = useState();
   const [folderData, setFolderData] = useState([]);
   const [folderId, setFolderId] = useState();
+  const [fileId, setFileId] = useState();
   const [fileData, setFileData] = useState([]);
 
   const toggleDark = async (value) => {
@@ -60,6 +63,11 @@ function FormDashboard() {
   const handleDeleteModalOpen = (e) => {
     setFolderId(e.target.id);
     setDeleteOpenModal(true);
+  };
+
+  const handleFileDeleteModalOpen = (e) => {
+    setFileId(e.target.id);
+    setDeleteFileOpenModal(true);
   };
 
   const shareHandleModalOpen = () => {
@@ -224,14 +232,19 @@ function FormDashboard() {
               folderId={folderId}
             />
           )}
-
+          {deleteFileOpenModal && (
+            <DeleteFileConfirmation
+              deleteFileCloseModal={setDeleteFileOpenModal}
+              fileId={fileId}
+            />
+          )}
           {fileData.map((file, index) => (
             <div id={file._id} className={styles.createdFile} key={index}>
               <Link>
                 <img
                   src={delete_icon}
-                  onClick={handleDeleteModalOpen}
                   id={file._id}
+                  onClick={handleFileDeleteModalOpen}
                 />
               </Link>
               <Link to={`/createform/${file._id}`}>
