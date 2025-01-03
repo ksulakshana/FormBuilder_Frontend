@@ -20,6 +20,11 @@
   border: var(--border-bottom);
 }
 
+.secondDataSection {
+  width: 80%;
+  overflow-x: scroll;
+}
+
 table {
   margin: 0 auto;
   border-collapse: collapse;
