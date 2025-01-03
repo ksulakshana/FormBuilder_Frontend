@@ -32,6 +32,7 @@ function FormDashboard() {
   const [folderData, setFolderData] = useState([]);
   const [folderId, setFolderId] = useState();
   const [fileData, setFileData] = useState([]);
+
   const toggleDark = async (value) => {
     let webtheme;
     if (value == false) {
@@ -55,6 +56,7 @@ function FormDashboard() {
   const handleModalOpen = (e) => {
     setOpenModal(true);
   };
+
   const handleDeleteModalOpen = (e) => {
     setFolderId(e.target.id);
     setDeleteOpenModal(true);
@@ -73,7 +75,7 @@ function FormDashboard() {
     } else if (e.target.value == "settings") {
       navigate("/settings");
     } else {
-      navigate("/home");
+      navigate(home);
     }
     setSelectedWS(e.target.value);
     localStorage.setItem("WorkingWorkspaceId", e.target.value);
@@ -87,6 +89,34 @@ function FormDashboard() {
           navigate("/login");
         }
         setUser(res.data.userdata.name);
+        getUserAllWorkspace()
+          .then((res) => {
+            if (!res.data) {
+              alert("No Dashboard!! Something is wrong.. Please register");
+              navigate("/register");
+            }
+            setWSData(res.data.workspaceData);
+            document.getElementById("wsSelect").selectedIndex = 0;
+            var x = document.getElementById("wsSelect").selectedIndex;
+            var y = document.getElementsByTagName("option");
+            setSelectedWS(y[x].value);
+            localStorage.setItem("WorkingWorkspaceId", y[x].value);
+
+            getAllFoldersForWorkspace(y[x].value)
+              .then((res) => {
+                if (!res.data) {
+                  alert("No Folders Created");
+                }
+                setFolderData(res.data.folderData);
+                getFiles();
+              })
+              .catch((e) => {
+                console.log(e);
+              });
+          })
+          .catch((e) => {
+            console.log(e);
+          });
         if (res.data.userdata.theme == "dark") {
           setIsToggled(true);
           root.classList.toggle("dark");
@@ -96,36 +126,6 @@ function FormDashboard() {
           root.classList.toggle("light");
           document.body.classList.add("light");
         }
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-
-    getUserAllWorkspace()
-      .then((res) => {
-        if (!res.data) {
-          alert("No Dashboard!! Something is wrong.. Please register");
-          navigate("/register");
-        }
-        setWSData(res.data.workspaceData);
-
-        document.getElementById("wsSelect").selectedIndex = 0;
-        var x = document.getElementById("wsSelect").selectedIndex;
-        var y = document.getElementsByTagName("option");
-        setSelectedWS(y[x].value);
-        localStorage.setItem("WorkingWorkspaceId", y[x].value);
-
-        getAllFoldersForWorkspace(y[x].value)
-          .then((res) => {
-            if (!res.data) {
-              alert("No Folders Created");
-            }
-            setFolderData(res.data.folderData);
-            getFiles();
-          })
-          .catch((e) => {
-            console.log(e);
-          });
       })
       .catch((e) => {
         console.log(e);

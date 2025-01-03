@@ -15,6 +15,7 @@ export const register = async (data) => {
     return handleApiResponse(res);
   } catch (e) {
     console.log(e);
+    return handleApiResponse(e);
   }
 };
 
@@ -32,6 +33,7 @@ export const login = async (data) => {
     return res;
   } catch (error) {
     console.log(error);
+    return handleApiResponse(error);
   }
 };
 
@@ -48,8 +50,10 @@ export const getUserData = async () => {
       }
     );
     return res;
+    // return handleApiResponse(res);
   } catch (e) {
     console.log(e);
+    return handleApiResponse(e);
   }
 };
 
@@ -70,5 +74,6 @@ export const updateUser = async (data) => {
     return res;
   } catch (error) {
     console.log(error);
+    return handleApiResponse(error);
   }
 };

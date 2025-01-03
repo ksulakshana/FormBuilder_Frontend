@@ -54,6 +54,8 @@ function LoginForm() {
           const token = res.data.token;
           localStorage.setItem("token", token);
           navigate("/home");
+        } else if (res.status === 400) {
+          alert("Invalid email or password");
         } else {
           alert("Something went wrong");
         }
