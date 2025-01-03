@@ -9,6 +9,7 @@ function Settings() {
 
   let root = document.querySelector(":root");
   const [user, setUser] = useState();
+  const [existingData, setExistingData] = useState([]);
 
   useEffect(() => {
     getUserData()
@@ -18,6 +19,7 @@ function Settings() {
           navigate("/login");
         }
         setUser(res.data.userdata.name);
+        setExistingData(res.data.userdata);
         if (res.data.userdata.theme == "dark") {
           root.classList.toggle("dark");
           document.body.classList.remove("light");
@@ -44,6 +46,8 @@ function Settings() {
     password: "",
     confirmPassword: "",
   });
+
+  let finalFormData = {};
 
   const [error, setError] = useState({
     name: false,
@@ -75,7 +79,7 @@ function Settings() {
       },
     },
     confirmPassword: {
-      message: "Password is required",
+      message: "Please provide valid Confirm Password",
       isValid: formData.password == formData.confirmPassword,
       onError: () => {
         setError((error) => ({ ...error, confirmPassword: true }));
@@ -85,6 +89,48 @@ function Settings() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    console.log(formData);
+
+    error["confirmPassword"] = false;
+    let isError = false;
+
+    if (formData["email"] !== "" && !errorMessages["email"].isValid) {
+      isError = true;
+      errorMessages["email"].onError();
+    }
+
+    if (
+      (formData.password !== "" && formData.confirmPassword === "") ||
+      formData.password !== formData.confirmPassword
+    ) {
+      error["confirmPassword"] = true;
+      isError = true;
+    }
+    if (!isError) {
+      try {
+        const res1 = Object.fromEntries(
+          Object.entries(formData).filter(([k, v]) => v !== "")
+        );
+
+        const res = await updateUser(res1);
+        console.log(res);
+        if (res.status === 200) {
+          alert("Updated successfully");
+          navigate("/home");
+        } else if (res.status === 400) {
+          alert("Invalid email or password");
+        } else {
+          alert("Something went wrong");
+        }
+      } catch (e) {
+        if (e.response.status === 400) {
+          alert("Invalid email or password");
+        }
+        if (e.response.status === 401) {
+          alert("Invalid email or password");
+        }
+      }
+    }
   };
   return (
     <div className={styles.settingsContainer}>
@@ -94,7 +140,7 @@ function Settings() {
         <input
           name="name"
           type="text"
-          placeholder="Enter a username"
+          placeholder={existingData["name"]}
           value={formData.name}
           onChange={(e) => {
             setFormData({ ...formData, name: e.target.value });
@@ -107,7 +153,7 @@ function Settings() {
         <input
           name="email"
           type="email"
-          placeholder="Enter your email"
+          placeholder={existingData["email"]}
           value={formData.email}
           onChange={(e) => {
             setFormData({ ...formData, email: e.target.value });
