@@ -34,11 +34,12 @@ function UserForm() {
     getFormData(formParams.id)
       .then((res) => {
         if (!res.data) {
-          alert("No form exists with this Id");
+          // alert("No form exists with this Id");
         }
         setForm(res.data.formData);
         const countId = { formId: formParams.id };
         addViewCounts(countId);
+        addStartCounts();
       })
       .catch((e) => {
         console.log(e);
@@ -49,7 +50,7 @@ function UserForm() {
     addViewCount(countId)
       .then((res) => {
         if (!res.data) {
-          alert("No form exists with this Id");
+          // alert("No form exists with this Id");
         }
       })
       .catch((e) => {
@@ -57,11 +58,12 @@ function UserForm() {
       });
   };
 
-  const addStartCounts = (countId) => {
+  const addStartCounts = () => {
+    const countId = { formId: formParams.id };
     addStartCount(countId)
       .then((res) => {
         if (!res.data) {
-          alert("No form exists with this Id");
+          // alert("No form exists with this Id");
         }
       })
       .catch((e) => {
@@ -73,7 +75,7 @@ function UserForm() {
     addCompleteCount(countId)
       .then((res) => {
         if (!res.data) {
-          alert("No form exists with this Id");
+          // alert("No form exists with this Id");
         }
         window.location.reload(countId);
       })
@@ -163,7 +165,7 @@ function UserForm() {
                         value={inputText}
                         onChange={(e) => setInputText(e.target.value)}
                       />
-                      <img src={sendButton} />
+                      <img src={sendButton} onClick={addStartCounts} />
                     </>
                   )}
                   {value1.fieldName === "number" && (
@@ -277,9 +279,12 @@ function UserForm() {
                         id={value1.fieldCount}
                         name={value1.fieldCount}
                         className={styles.inputTextFromUser}
-                        onClick={(e) => alert("clicked")}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          alert("clicked");
+                        }}
                       >
-                        Submit
+                        {value1.fieldCount} Button
                       </button>
                     </>
                   )}
