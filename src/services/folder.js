@@ -15,6 +15,7 @@ export const createFolder = async (data) => {
     return handleApiResponse(res);
   } catch (e) {
     console.log(e);
+    return handleApiResponse(e);
   }
 };
 

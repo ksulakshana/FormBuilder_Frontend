@@ -44,6 +44,7 @@ function NewFolder({ openModal, closeModal, selectedWS }) {
 
     if (!isError) {
       try {
+        console.log(formData);
         const res = await createFolder(formData);
         if (res.status === 201) {
           alert("Folder Created Successfully");
