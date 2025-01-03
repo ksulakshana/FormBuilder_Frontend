@@ -83,6 +83,8 @@ function FormDashboard() {
     } else if (e.target.value == "settings") {
       navigate("/settings");
     } else {
+      setSelectedWS(e.target.value);
+      localStorage.setItem("WorkingWorkspaceId", e.target.value);
       navigate(home);
     }
     setSelectedWS(e.target.value);
@@ -103,12 +105,17 @@ function FormDashboard() {
               alert("No Dashboard!! Something is wrong.. Please register");
               navigate("/register");
             }
+            console.log("wsdata");
+            console.log(res.data.workspaceData[0]._id);
             setWSData(res.data.workspaceData);
             document.getElementById("wsSelect").selectedIndex = 0;
             var x = document.getElementById("wsSelect").selectedIndex;
             var y = document.getElementsByTagName("option");
-            setSelectedWS(y[x].value);
-            localStorage.setItem("WorkingWorkspaceId", y[x].value);
+            setSelectedWS(res.data.workspaceData[0]._id);
+            localStorage.setItem(
+              "WorkingWorkspaceId",
+              res.data.workspaceData[0]._id
+            );
 
             getAllFoldersForWorkspace(y[x].value)
               .then((res) => {
@@ -165,10 +172,14 @@ function FormDashboard() {
                 <option key={i} value={item._id}>
                   {item.name} Workspace
                 </option>
-                <option value="settings">Settings</option>
-                <option value="logout">Logout</option>
               </>
             ))}
+          {wsData && (
+            <>
+              <option value="settings">Settings</option>
+              <option value="logout">Logout</option>
+            </>
+          )}
         </select>
         <div className={styles.toggleDiv}>
           <span>Light</span>
