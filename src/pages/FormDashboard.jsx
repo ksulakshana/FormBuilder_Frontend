@@ -151,11 +151,12 @@ function FormDashboard() {
           className={styles.dashboardNavOptions}
           onChange={newSelection}
         >
-          {wsData.map((item, i) => (
-            <option key={i} value={item._id}>
-              {item.name} Workspace
-            </option>
-          ))}
+          {wsData &&
+            wsData.map((item, i) => (
+              <option key={i} value={item._id}>
+                {item.name} Workspace
+              </option>
+            ))}
           <option value="settings">Settings</option>
           <option value="logout">Logout</option>
         </select>
